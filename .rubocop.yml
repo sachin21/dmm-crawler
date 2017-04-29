@@ -1,0 +1,21 @@
+LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 12
+
+Style/Documentation:
+  Enabled: false
+
+Style/FileName:
+  Exclude:
+    - lib/dmm-crawler.rb

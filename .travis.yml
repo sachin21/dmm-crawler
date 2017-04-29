@@ -1,0 +1,15 @@
+language: ruby
+
+rvm:
+  - ruby-2.2.2
+  - ruby-2.3.0
+  - ruby-2.4.0
+  - ruby-2.4.1
+
+before_install:
+  - gem install bundler
+
+script: 'bundle exec rake spec'
+
+notifications:
+  slack: sachin21dev:J8sIAeYdBknOGbFHtrphiobX
