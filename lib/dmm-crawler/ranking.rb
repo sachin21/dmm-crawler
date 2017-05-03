@@ -14,11 +14,12 @@ module DMMCrawler
         [
           element.search('.rank-name').first.text.strip,
           element.search('img').last.attributes['src'].value,
-          "#{BASE_URL}#{element.search('.rank-name').first.search('a').first.attributes.first[1].value}"
+          "#{BASE_URL}#{element.search('.rank-name').first.search('a').first.attributes.first[1].value}",
+          element.search('.rank-labelListItem').map { |e| e.search('a').text.strip }
         ]
       end
 
-      books.map.with_index(1) { |(title, image, url), rank| { title: "#{rank}位: #{title}", url: url, image_url: image } }
+      books.map.with_index(1) { |(title, image, url, tags), rank| { title: "#{rank}位: #{title}", url: url, image_url: image, tags: tags } }
     end
 
     private
