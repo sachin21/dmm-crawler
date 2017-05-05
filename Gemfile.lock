@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dmm-crawler (0.0.2)
+    dmm-crawler (0.0.3)
       mechanize
 
 GEM
