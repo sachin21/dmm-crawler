@@ -27,7 +27,7 @@ args = {
   submedia: 'cg'
 }
 
-Ranking.new(args).books
+Ranking.new(args).arts
 
 # =>
 # {
