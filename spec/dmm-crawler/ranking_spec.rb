@@ -1,10 +1,10 @@
 describe DMMCrawler::Ranking do
-  let(:attachments) { described_class.new(arguments).books }
+  let(:attachments) { described_class.new(arguments).arts }
 
   let(:submedia) { 'cg' }
   let(:arguments) { { submedia: submedia, term: term } }
 
-  describe '#books' do
+  describe '#arts' do
     after { sleep 2 }
 
     context 'with length' do

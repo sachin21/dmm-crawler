@@ -9,8 +9,8 @@ module DMMCrawler
       @agent = Agent.new.agent
     end
 
-    def books
-      books = page.search('.rank-rankListItem.fn-setPurchaseChange').map do |element|
+    def arts
+      arts = page.search('.rank-rankListItem.fn-setPurchaseChange').map do |element|
         [
           element.search('.rank-name').first.text.strip,
           element.search('img').last.attributes['src'].value,
@@ -19,7 +19,7 @@ module DMMCrawler
         ]
       end
 
-      books.map.with_index(1) { |(title, image, url, tags), rank| { title: "#{rank}位: #{title}", url: url, image_url: image, tags: tags } }
+      arts.map.with_index(1) { |(title, image, url, tags), rank| { title: "#{rank}位: #{title}", url: url, image_url: image, tags: tags } }
     end
 
     private
