@@ -1,5 +1,9 @@
 # Change logs
 
+## v0.0.3
+- Rename the method from books to arts.
+- Correct examples for `README.md`.
+
 ## v0.0.2
 - Write docs for dmm-crawler.
 - Add a function to fetch tags for the title.
