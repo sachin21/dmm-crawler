@@ -22,12 +22,7 @@ require 'dmm-crawler'
 
 include DMMCrawler
 
-args = {
-  term: '24',
-  submedia: 'cg'
-}
-
-Ranking.new(args).arts
+Ranking.new(term: '24', submedia: 'cg').arts
 
 # =>
 # {
