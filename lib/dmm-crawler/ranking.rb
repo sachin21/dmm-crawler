@@ -19,7 +19,7 @@ module DMMCrawler
         ]
       end
 
-      arts.map.with_index(1) { |(title, image, url, tags), rank| { title: "#{rank}位: #{title}", url: url, image_url: image, tags: tags } }
+      arts.map.with_index(1) { |(title, image_url, title_link, tags), rank| { title: "#{rank}位: #{title}", title_link: title_link, image_url: image_url, tags: tags } }
     end
 
     private

@@ -1,5 +1,8 @@
 # Change logs
 
+## v0.0.4 (Unreleased)
+- Rename a attribute from url to title_link
+
 ## v0.0.3
 - Rename the method from books to arts.
 - Correct examples for `README.md`.
