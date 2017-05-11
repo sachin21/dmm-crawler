@@ -1,7 +1,8 @@
 # Change logs
 
 ## v0.0.4 (Unreleased)
-- Rename a attribute from url to title_link
+- Rename a attribute from url to title_link.
+- Improve readability of about arguments.
 
 ## v0.0.3
 - Rename the method from books to arts.

@@ -34,6 +34,10 @@ Ranking.new(term: '24', submedia: 'cg').arts
 
 この例ではCG作品の24時間ランキングのデータを取得しています。
 
+### 使用可能な引数
+- termの引数は`all, comic, cg, game, voice`のみ利用可能です。
+- submediaの引数は`24, weekly, monthly, total`のみ利用可能です。
+
 ## コントリビューション
 
 1. フォークする
