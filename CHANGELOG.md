@@ -1,8 +1,8 @@
 # Change logs
 
-## v0.0.4 (Unreleased)
+## v0.0.4
 - Fix the code for chech an argument.
-- Rename a attribute from url to title_link.
+- Rename an attribute from url to title_link.
 - Improve readability of about arguments.
 
 ## v0.0.3
