@@ -24,13 +24,6 @@ module DMMCrawler
 
     private
 
-    def credentials
-      {
-        api_id:       ENV['API_ID'],
-        affiliate_id: ENV['AFFILIATE_ID']
-      }
-    end
-
     def page
       @agent.get(@url)
     end
