@@ -1,6 +1,7 @@
 # Change logs
 
 ## v0.0.4 (Unreleased)
+- Fix the code for chech an argument.
 - Rename a attribute from url to title_link.
 - Improve readability of about arguments.
 
