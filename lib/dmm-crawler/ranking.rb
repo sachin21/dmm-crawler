@@ -15,11 +15,20 @@ module DMMCrawler
           element.search('.rank-name').first.text.strip,
           element.search('img').last.attributes['src'].value,
           "#{BASE_URL}#{element.search('.rank-name').first.search('a').first.attributes.first[1].value}",
+          element.search('.rank-desc').text,
           element.search('.rank-labelListItem').map { |e| e.search('a').text.strip }
         ]
       end
 
-      arts.map.with_index(1) { |(title, image_url, title_link, tags), rank| { title: "#{rank}位: #{title}", title_link: title_link, image_url: image_url, tags: tags } }
+      arts.map.with_index(1) do |(title, image_url, title_link, description, tags), rank|
+        {
+          title: "#{rank}位: #{title}",
+          title_link: title_link,
+          image_url: image_url,
+          description: description,
+          tags: tags
+        }
+      end
     end
 
     private
