@@ -1,6 +1,6 @@
 # Change logs
 
-## 0.0.5 (Unreleased)
+## 0.0.5
 - Add a function to fetch description.
 
 ## v0.0.4
