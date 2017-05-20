@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.0.5 (Unreleased)
+- Add a function to fetch description.
+
 ## v0.0.4
 - Fix the code for chech an argument.
 - Rename an attribute from url to title_link.
