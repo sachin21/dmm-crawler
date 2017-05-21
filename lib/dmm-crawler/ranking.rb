@@ -28,6 +28,7 @@ module DMMCrawler
     class Attribute
       def initialize(element)
         @element = element
+        @agent = Agent.instance.agent
       end
 
       def to_a
@@ -55,7 +56,13 @@ module DMMCrawler
       end
 
       def description
-        @element.search('.rank-desc').text
+        @element.search('.rank-desc').text.nil? ? fetch_description : @element.search('.rank-desc').text
+      end
+
+      def fetch_description
+        url = File.join(BASE_URL, @element.search('.rank-name a').first.attributes['href'].value)
+        page = @agent.get(url)
+        page.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '')
       end
 
       def tags
