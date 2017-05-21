@@ -1,11 +1,14 @@
+require 'singleton'
+
 module DMMCrawler
   class Agent
-    attr_accessor :agent
+    include Singleton
 
-    def initialize
-      @agent = ::Mechanize.new
-      @agent.request_headers = { 'Accept-Encoding' => '' }
-      @agent.ignore_bad_chunking = true
+    def agent
+      agent = ::Mechanize.new
+      agent.request_headers = { 'Accept-Encoding' => '' }
+      agent.ignore_bad_chunking = true
+      agent
     end
   end
 end
