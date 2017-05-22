@@ -1,5 +1,9 @@
 # Change logs
 
+## 0.0.6
+- Fix the bug where description is empty.
+- Refactor codes related to attributes for the art.
+
 ## 0.0.5
 - Add a function to fetch description.
 
