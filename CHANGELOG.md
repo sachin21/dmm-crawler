@@ -1,6 +1,10 @@
 # Change logs
 
 ## 0.0.6
+### Critical bug fix
+- Replace url with image_url
+
+## 0.0.6
 - Fix the bug where description is empty.
 - Refactor codes related to attributes for the art.
 
