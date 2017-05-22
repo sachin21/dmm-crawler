@@ -14,7 +14,7 @@ module DMMCrawler
         Attribute.new(element).to_a
       end
 
-      arts.map.with_index(1) do |(title, image_url, title_link, description, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, description, tags), rank|
         {
           title: "#{rank}位: #{title}",
           title_link: title_link,
