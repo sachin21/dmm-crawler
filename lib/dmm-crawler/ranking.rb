@@ -14,12 +14,13 @@ module DMMCrawler
         Attribute.new(element).to_a
       end
 
-      arts.map.with_index(1) do |(title, title_link, image_url, description, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, description, description_raw, tags), rank|
         {
           title: "#{rank}位: #{title}",
           title_link: title_link,
           image_url: image_url,
           description: description,
+          description_raw: description_raw,
           tags: tags
         }
       end
@@ -37,6 +38,7 @@ module DMMCrawler
           title_link,
           image_url,
           description,
+          description_raw,
           tags
         ]
       end
@@ -59,7 +61,17 @@ module DMMCrawler
         @element.search('.rank-desc').text.nil? ? fetch_description : @element.search('.rank-desc').text
       end
 
+      def description_raw
+        @element.search('.rank-desc').text.nil? ? fetch_description_raw : @element.search('.rank-desc').to_s
+      end
+
       def fetch_description
+        url = File.join(BASE_URL, @element.search('.rank-name a').first.attributes['href'].value)
+        page = @agent.get(url)
+        page.search('.summary .summary__txt').text
+      end
+
+      def fetch_description_raw
         url = File.join(BASE_URL, @element.search('.rank-name a').first.attributes['href'].value)
         page = @agent.get(url)
         page.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '')
