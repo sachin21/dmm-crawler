@@ -1,11 +1,14 @@
 # Change logs
 
-## 0.0.6
+## 0.1.0
+- Add an attribute raw data of description that include HTML tag.
+
+## 0.0.7
 ### Critical bug fix
 - Replace url with image_url
+- Fix the bug where description is empty.
 
 ## 0.0.6
-- Fix the bug where description is empty.
 - Refactor codes related to attributes for the art.
 
 ## 0.0.5
