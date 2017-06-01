@@ -1,8 +1,10 @@
 module DMMCrawler
   class Attributes
-    def initialize(element)
-      @element = element
+    def initialize(element, submedia = nil)
       @agent = Agent.instance.agent
+      @element = element
+
+      @submedia = submedia
     end
 
     def to_a
@@ -12,6 +14,7 @@ module DMMCrawler
         image_url,
         description,
         description_raw,
+        submedia,
         tags
       ]
     end
@@ -57,6 +60,18 @@ module DMMCrawler
       else
         @element.search('.rank-desc').to_s.tr('"', "'")
       end
+    end
+
+    def submedia
+      return @submedia if @submedia
+
+      @element
+        .search('.productAttribute-listItem .c_icon_productGenre')
+        .first
+        .attributes['class']
+        .value
+        .gsub('c_icon_productGenre ', '')
+        .delete('-')
     end
 
     def tags
