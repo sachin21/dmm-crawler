@@ -1,5 +1,10 @@
 # Change logs
 
+## 0.1.2
+- Extract Attributes klass from Ranking klass.
+- Support art page.
+- Add an attribute for submedia.
+
 ## 0.1.1
 - Convert double quotes to single qoutes for description_raw.
 
