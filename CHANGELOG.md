@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.1.1
+- Convert double quotes to single qoutes for description_raw.
+
 ## 0.1.0
 - Add an attribute raw data of description that include HTML tag.
 
