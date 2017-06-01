@@ -62,7 +62,7 @@ module DMMCrawler
       end
 
       def description_raw
-        @element.search('.rank-desc').text.nil? ? fetch_description_raw : @element.search('.rank-desc').to_s
+        @element.search('.rank-desc').text.nil? ? fetch_description_raw : @element.search('.rank-desc').to_s.tr('"', "'")
       end
 
       def fetch_description
@@ -74,7 +74,7 @@ module DMMCrawler
       def fetch_description_raw
         url = File.join(BASE_URL, @element.search('.rank-name a').first.attributes['href'].value)
         page = @agent.get(url)
-        page.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '')
+        page.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '').tr('"', "'")
       end
 
       def tags
