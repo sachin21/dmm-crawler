@@ -9,16 +9,17 @@ module DMMCrawler
 
     def arts
       arts = page.search('.rank-rankListItem.fn-setPurchaseChange').map do |element|
-        Attributes.new(element).to_a
+        Attributes.new(element, @submedia).to_a
       end
 
-      arts.map.with_index(1) do |(title, title_link, image_url, description, description_raw, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, description, description_raw, submedia, tags), rank|
         {
           title: "#{rank}位: #{title}",
           title_link: title_link,
           image_url: image_url,
           description: description,
           description_raw: description_raw,
+          submedia: submedia,
           tags: tags
         }
       end
