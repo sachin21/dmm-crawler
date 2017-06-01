@@ -19,39 +19,56 @@ module DMMCrawler
     private
 
     def title
-      @element.search('.rank-name').first.text.strip
+      if art_page?
+        @element.search('.productTitle__txt span').remove
+        @element.search('.productTitle__txt').text.strip
+      else
+        @element.search('.rank-name').first.text.strip
+      end
     end
 
     def image_url
-      @element.search('img').last.attributes['src'].value
+      if art_page?
+        @element.search('.productPreview__item img').last.attributes['data-src'].value
+      else
+        @element.search('img').last.attributes['src'].value
+      end
     end
 
     def title_link
-      File.join(BASE_URL, @element.search('.rank-name').first.search('a').first.attributes.first[1].value)
+      if art_page?
+        @element.uri.to_s
+      else
+        File.join(BASE_URL, @element.search('.rank-name').first.search('a').first.attributes.first[1].value)
+      end
     end
 
     def description
-      @element.search('.rank-desc').text.nil? ? fetch_description : @element.search('.rank-desc').text
+      if art_page?
+        @element.search('.summary .summary__txt').text
+      else
+        @element.search('.rank-desc').text
+      end
     end
 
     def description_raw
-      @element.search('.rank-desc').text.nil? ? fetch_description_raw : @element.search('.rank-desc').to_s.tr('"', "'")
-    end
-
-    def fetch_description
-      url = File.join(BASE_URL, @element.search('.rank-name a').first.attributes['href'].value)
-      page = @agent.get(url)
-      page.search('.summary .summary__txt').text
-    end
-
-    def fetch_description_raw
-      url = File.join(BASE_URL, @element.search('.rank-name a').first.attributes['href'].value)
-      page = @agent.get(url)
-      page.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '').tr('"', "'")
+      if art_page?
+        @element.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '').tr('"', "'")
+      else
+        @element.search('.rank-desc').to_s.tr('"', "'")
+      end
     end
 
     def tags
-      @element.search('.rank-labelListItem').map { |e| e.search('a').text.strip }
+      if art_page?
+        @element.search('.genreTagList .genreTagList__item a').map { |e| e.text.strip }
+      else
+        @element.search('.rank-labelListItem').map { |e| e.search('a').text.strip }
+      end
+    end
+
+    def art_page?
+      @element.search('.rank-name').empty?
     end
   end
 end
