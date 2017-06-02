@@ -51,7 +51,7 @@ module DMMCrawler
         @element.search('.summary .summary__txt').text
       else
         @element.search('.rank-desc').text
-      end
+      end.strip
     end
 
     def description_raw
