@@ -3,7 +3,7 @@ module DMMCrawler
     def initialize(arguments)
       @agent = discriminate_agent(arguments[:agent])
       @term = discriminate_term(arguments[:term])
-      @submedia = discriminate_submedia(arguments[:submedia])
+      @submedia = arguments[:submedia]
       @url = File.join(BASE_URL, "/dc/doujin/-/ranking-all/=/sort=popular/submedia=#{@submedia}/term=#{@term}")
     end
 
@@ -35,11 +35,6 @@ module DMMCrawler
 
     def discriminate_term(term)
       return term if %w(24 weekly monthly total).include?(term)
-      raise TypeError
-    end
-
-    def discriminate_submedia(submedia)
-      return submedia if submedia.is_a?(String)
       raise TypeError
     end
 
