@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.1.3
+- Add crawling more information.
+
 ## 0.1.2
 - Extract Attributes klass from Ranking klass.
 - Support art page.
