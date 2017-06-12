@@ -15,6 +15,7 @@ module DMMCrawler
         description,
         description_raw,
         submedia,
+        informations,
         tags
       ]
     end
@@ -72,6 +73,19 @@ module DMMCrawler
         .value
         .gsub('c_icon_productGenre ', '')
         .delete('-')
+    end
+
+    def informations
+      keys = extract_text(@element.search('.m-productInformation .productInformation__item .informationList__ttl'))
+      values = extract_text(@element.search('.m-productInformation .productInformation__item .informationList__txt'))
+
+      keys.zip(values).map { |key, value| { key: key, value: value } }
+    end
+
+    def extract_text(elements)
+      elements
+        .select { |element| element.text.strip != 'ジャンル' }
+        .map { |element| element.children.text.strip }
     end
 
     def tags
