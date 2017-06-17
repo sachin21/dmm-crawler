@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.1.4
+- Move the series to last.
+
 ## 0.1.3
 - Add crawling more information.
 
