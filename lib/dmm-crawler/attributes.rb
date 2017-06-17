@@ -79,7 +79,15 @@ module DMMCrawler
       keys = extract_text(@element.search('.m-productInformation .productInformation__item .informationList__ttl'))
       values = extract_text(@element.search('.m-productInformation .productInformation__item .informationList__txt'))
 
-      keys.zip(values).map { |key, value| { key: key, value: value } }
+      information = keys.zip(values)
+      series = information.find { |array| array.first == 'シリーズ' }
+
+      if series
+        information = information.select { |array| array.first != 'シリーズ' }
+        information.push(series)
+      end
+
+      information.map { |key, value| { key: key, value: value } }
     end
 
     def extract_text(elements)
