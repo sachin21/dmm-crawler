@@ -12,8 +12,6 @@ module DMMCrawler
         title,
         title_link,
         image_url,
-        description,
-        description_raw,
         submedia,
         informations,
         tags
@@ -44,22 +42,6 @@ module DMMCrawler
         @element.uri.to_s
       else
         File.join(BASE_URL, @element.search('.rank-name').first.search('a').first.attributes.first[1].value)
-      end
-    end
-
-    def description
-      if art_page?
-        @element.search('.summary .summary__txt').text
-      else
-        @element.search('.rank-desc').text
-      end.strip
-    end
-
-    def description_raw
-      if art_page?
-        @element.search('.summary .summary__txt').to_s.gsub(/\sclass=".*"/, '').tr('"', "'")
-      else
-        @element.search('.rank-desc').to_s.tr('"', "'")
       end
     end
 

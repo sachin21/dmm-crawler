@@ -15,13 +15,11 @@ module DMMCrawler
         Attributes.new(page, @submedia).to_a
       end
 
-      arts.map.with_index(1) do |(title, title_link, image_url, description, description_raw, submedia, informations, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, submedia, informations, tags), rank|
         {
           title: "#{rank}位: #{title}",
           title_link: title_link,
           image_url: image_url,
-          description: description,
-          description_raw: description_raw,
           submedia: submedia,
           informations: informations,
           tags: tags
