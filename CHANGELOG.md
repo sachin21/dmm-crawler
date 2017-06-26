@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.1.5
+- Do not crawl columns related to description.
+
 ## 0.1.4
 - Move the series to last.
 
