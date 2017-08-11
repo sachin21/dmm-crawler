@@ -39,7 +39,7 @@ module DMMCrawler
     end
 
     def discriminate_submedia(submedia)
-      return submedia if %w(all comic cg game voice).include?(submedia)
+      return submedia if submedia.is_a?(String)
       raise TypeError
     end
   end
