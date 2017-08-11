@@ -15,6 +15,7 @@ gem 'dmm-crawler'
 ```
 
 ## Usage
+
 From the bot in invited Slack's room.
 
 ```ruby
@@ -22,14 +23,19 @@ require 'dmm-crawler'
 
 include DMMCrawler
 
-Ranking.new(term: '24', submedia: 'cg').arts
+client = Client.new do |agent|
+  agent.ignore_bad_chunking = false
+end
 
+client.rankings(term: '24', submedia: 'cg')
 # =>
 # {
 #   title: "title",
-#   url: 'URL for title',
-#   image_url: 'Link to title's main image',
-#   tags: ['tag1', 'tag2']
+#   title_link: "title url",
+#   image_url: "Link to title"s main image",
+#   submedia: "cg",
+#   informations: [{key: 'key', value: 'value'}],
+#   tags: ["tag1", "tag2"]
 # }
 ```
 

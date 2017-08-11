@@ -3,6 +3,7 @@
 # DMM Crawler
 
 ## DMM Crawlerとは
+
 DMM.R18のクロールしたデータを取得するgemです。現在、**同人**のランキングにのみ対応しております。
 
 ## インストール
@@ -14,6 +15,7 @@ gem 'dmm-crawler'
 ```
 
 ## 使い方
+
 データを使いたい`.rb`ファイルで以下を実行したらクロールしたデータが取得出来ます。
 
 ```ruby
@@ -21,14 +23,19 @@ require 'dmm-crawler'
 
 include DMMCrawler
 
-Ranking.new(term: '24', submedia: 'cg').arts
+client = Client.new do |agent|
+  agent.ignore_bad_chunking = false
+end
 
+client.rankings(term: '24', submedia: 'cg')
 # =>
 # {
 #   title: "タイトル",
-#   url: '作品のURL',
-#   image_url: '作品のメイン画像へのURL',
-#   tags: ['タグ1', 'タグ2']
+#   title_link: "タイトルURL",
+#   image_url: "画像URL",
+#   submedia: "cg",
+#   informations: [{key: 'key', value: 'value'}],
+#   tags: ["タグ1", "タグ2"]
 # }
 ```
 
