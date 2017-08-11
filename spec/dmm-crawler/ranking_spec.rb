@@ -1,8 +1,9 @@
 describe DMMCrawler::Ranking do
   let(:attachments) { described_class.new(arguments).arts }
 
+  let(:agent) { DMMCrawler::Agent.instance.agent }
   let(:submedia) { 'cg' }
-  let(:arguments) { { submedia: submedia, term: term } }
+  let(:arguments) { { submedia: submedia, term: term, agent: agent } }
 
   describe '#arts' do
     after { sleep 2 }
@@ -26,7 +27,7 @@ describe DMMCrawler::Ranking do
     context 'with not registered argument' do
       subject { -> { attachments } }
 
-      let(:term) { 'hoge' }
+      let(:term) { nil }
 
       it { is_expected.to raise_error(TypeError) }
     end
