@@ -1,10 +1,10 @@
 module DMMCrawler
   class Ranking
     def initialize(arguments)
+      @agent = discriminate_agent(arguments[:agent])
       @term = discriminate_term(arguments[:term])
       @submedia = discriminate_submedia(arguments[:submedia])
       @url = File.join(BASE_URL, "/dc/doujin/-/ranking-all/=/sort=popular/submedia=#{@submedia}/term=#{@term}")
-      @agent = Agent.instance.agent
     end
 
     def arts
@@ -40,6 +40,11 @@ module DMMCrawler
 
     def discriminate_submedia(submedia)
       return submedia if submedia.is_a?(String)
+      raise TypeError
+    end
+
+    def discriminate_agent(agent)
+      return agent if agent.is_a?(Mechanize)
       raise TypeError
     end
   end
