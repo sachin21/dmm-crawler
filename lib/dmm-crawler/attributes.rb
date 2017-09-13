@@ -31,7 +31,13 @@ module DMMCrawler
 
     def image_url
       if art_page?
-        @element.search('.productPreview__item img').last.attributes['data-src'].value
+        attrs = @element.search('.productPreview__item img').last.attributes
+
+        if attrs['data-src']
+          attrs['data-src'].value
+        else
+          attrs['src'].value
+        end
       else
         @element.search('img').last.attributes['src'].value
       end
