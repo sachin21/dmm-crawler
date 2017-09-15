@@ -1,10 +1,7 @@
 module DMMCrawler
   class Attributes
-    def initialize(element, submedia = nil)
-      @agent = Agent.instance.agent
-      @element = element
-
-      @submedia = submedia
+    def initialize(url)
+      @element = Agent.instance.agent.get(url)
     end
 
     def to_a
@@ -52,8 +49,6 @@ module DMMCrawler
     end
 
     def submedia
-      return @submedia if @submedia
-
       @element
         .search('.productAttribute-listItem .c_icon_productGenre')
         .first
