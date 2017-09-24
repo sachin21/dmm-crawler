@@ -10,6 +10,7 @@ module DMMCrawler
         title_link,
         image_url,
         submedia,
+        author,
         informations,
         tags
       ]
@@ -23,6 +24,14 @@ module DMMCrawler
         @page.search('.productTitle__txt').text.strip
       else
         @page.search('.rank-name').first.text.strip
+      end
+    end
+
+    def title_link
+      if art_page?
+        @page.uri.to_s
+      else
+        File.join(BASE_URL, @page.search('.rank-name').first.search('a').first.attributes.first[1].value)
       end
     end
 
@@ -40,14 +49,6 @@ module DMMCrawler
       end
     end
 
-    def title_link
-      if art_page?
-        @page.uri.to_s
-      else
-        File.join(BASE_URL, @page.search('.rank-name').first.search('a').first.attributes.first[1].value)
-      end
-    end
-
     def submedia
       @page
         .search('.productAttribute-listItem .c_icon_productGenre')
@@ -56,6 +57,10 @@ module DMMCrawler
         .value
         .gsub('c_icon_productGenre ', '')
         .delete('-')
+    end
+
+    def author
+      @page.search('p.circleProductTitle__main').text.gsub('作品一覧', '')
     end
 
     def informations
@@ -73,18 +78,18 @@ module DMMCrawler
       information.map { |key, value| { key: key, value: value } }
     end
 
-    def extract_text(elements)
-      elements
-        .select { |element| element.text.strip != 'ジャンル' }
-        .map { |element| element.children.text.strip }
-    end
-
     def tags
       if art_page?
         @page.search('.genreTagList .genreTagList__item a').map { |e| e.text.strip }
       else
         @page.search('.rank-labelListItem').map { |e| e.search('a').text.strip }
       end
+    end
+
+    def extract_text(elements)
+      elements
+        .select { |element| element.text.strip != 'ジャンル' }
+        .map { |element| element.children.text.strip }
     end
 
     def art_page?
