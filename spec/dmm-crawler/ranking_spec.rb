@@ -21,7 +21,7 @@ describe DMMCrawler::Ranking do
 
       let(:term) { '24' }
 
-      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :informations, :tags)) }
+      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :informations, :tags)) }
     end
 
     context 'with not registered argument' do

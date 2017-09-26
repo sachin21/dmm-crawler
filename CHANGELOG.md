@@ -1,5 +1,17 @@
 # Change logs
 
+## 0.2.1
+- Add an attribute for author.
+
+## 0.2.0
+- Make optional configuration settable for Mechanize.
+- Fix a bug where data-src is not found
+- Do not fix types of submedia.
+- Update `README.md`.
+
+### Breaking Changes
+- Do not use passed value of submedia type.
+
 ## 0.1.5
 - Do not crawl columns related to description.
 
