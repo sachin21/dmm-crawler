@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.2.2
+- Do not manage 'Gemfile.lock'.
+
 ## 0.2.1
 - Add an attribute for author.
 
