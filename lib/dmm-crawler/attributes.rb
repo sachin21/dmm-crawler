@@ -60,7 +60,7 @@ module DMMCrawler
     end
 
     def author
-      @page.search('p.circleProductTitle__main').text.gsub('作品一覧', '')
+      @page.search('div.circleName__item').text.strip
     end
 
     def informations
