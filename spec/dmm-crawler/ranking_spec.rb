@@ -13,7 +13,7 @@ describe DMMCrawler::Ranking do
 
       let(:term) { '24' }
 
-      it { is_expected.to be 20 }
+      it { is_expected.to be 10 }
     end
 
     context 'with 24 argument' do
