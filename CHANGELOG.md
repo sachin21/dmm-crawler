@@ -1,5 +1,15 @@
 # Change logs
 
+## 0.2.3
+- Do not lock gem versions in 'dmm-crawler.gemspec'.
+- Change the author name element due to it is not found.
+
+### Security Changes
+- Lock the RuboCop version over `0.49.0`.
+
+### Breaking Changes
+- Reduce the ranking size to ten.
+
 ## 0.2.2
 - Do not manage 'Gemfile.lock'.
 
