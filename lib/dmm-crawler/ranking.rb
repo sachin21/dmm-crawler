@@ -17,12 +17,13 @@ module DMMCrawler
 
       arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, informations, tags), rank|
         {
-          title: "#{rank}位: #{title}",
+          title: title,
           title_link: title_link,
           image_url: image_url,
           submedia: submedia,
           author: author,
           informations: informations,
+          rank: rank,
           tags: tags
         }
       end
