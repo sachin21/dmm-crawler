@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.2.4
+- Do not show rank in art title.
+
 ## 0.2.3
 - Do not lock gem versions in 'dmm-crawler.gemspec'.
 - Change the author name element due to it is not found.
