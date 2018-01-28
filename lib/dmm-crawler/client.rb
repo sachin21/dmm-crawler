@@ -1,5 +1,7 @@
 module DMMCrawler
   class Client
+    attr_accessor :agent
+
     def initialize
       @agent = Agent.instance.agent
 
