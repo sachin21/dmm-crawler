@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.2.5
+- Make agent selectable in Attributes class.
+
 ## 0.2.4
 - Do not show rank in art title.
 
