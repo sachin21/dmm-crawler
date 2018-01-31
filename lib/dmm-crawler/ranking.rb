@@ -11,7 +11,7 @@ module DMMCrawler
       arts = page.search('.rank-rankListItem.fn-setPurchaseChange').take(10).map do |element|
         sleep_each do
           url = File.join(BASE_URL, element.search('.rank-name a').first.attributes['href'].value)
-          Attributes.new(url).to_a
+          Attributes.new(url, agent: @agent).to_a
         end
       end
 

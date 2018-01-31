@@ -1,7 +1,7 @@
 module DMMCrawler
   class Attributes
-    def initialize(url)
-      @page = Agent.instance.agent.get(url)
+    def initialize(url, agent: Agent.instance.agent)
+      @page = agent.get(url)
     end
 
     def to_a
