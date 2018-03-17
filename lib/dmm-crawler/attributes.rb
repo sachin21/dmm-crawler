@@ -12,6 +12,7 @@ module DMMCrawler
         submedia,
         author,
         informations,
+        price,
         tags
       ]
     end
@@ -59,6 +60,12 @@ module DMMCrawler
         .delete('-')
     end
 
+    def price
+      @page
+        .search('.m-priceList .priceList__sub.priceList__sub--big')
+        .text.strip.delete('円,')
+    end
+
     def author
       @page.search('div.circleName__item').text.strip
     end
@@ -71,7 +78,7 @@ module DMMCrawler
       series = information.find { |array| array.first == 'シリーズ' }
 
       if series
-        information = information.select { |array| array.first != 'シリーズ' }
+        information = information.reject { |array| array.first == 'シリーズ' }
         information.push(series)
       end
 
@@ -88,7 +95,7 @@ module DMMCrawler
 
     def extract_text(elements)
       elements
-        .select { |element| element.text.strip != 'ジャンル' }
+        .reject { |element| element.text.strip == 'ジャンル' }
         .map { |element| element.children.text.strip }
     end
 
