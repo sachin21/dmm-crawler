@@ -21,7 +21,7 @@ describe DMMCrawler::Ranking do
 
       let(:term) { '24' }
 
-      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :informations, :rank, :tags)) }
+      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :informations, :rank, :price, :tags)) }
       it { is_expected.to all(satisfy { |art| art.all? { |_k, v| v != '' } }) }
     end
 

@@ -15,7 +15,7 @@ module DMMCrawler
         end
       end
 
-      arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, informations, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, informations, price, tags), rank|
         {
           title: title,
           title_link: title_link,
@@ -24,6 +24,7 @@ module DMMCrawler
           author: author,
           informations: informations,
           rank: rank,
+          price: price,
           tags: tags
         }
       end
@@ -36,7 +37,7 @@ module DMMCrawler
     end
 
     def discriminate_term(term)
-      return term if %w(24 weekly monthly total).include?(term)
+      return term if %w[24 weekly monthly total].include?(term)
       raise TypeError
     end
 
