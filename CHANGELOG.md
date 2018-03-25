@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.2.6
+- Fetch the price of the art.
+
 ## 0.2.5
 - Make agent selectable in Attributes class.
 
