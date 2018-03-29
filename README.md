@@ -16,7 +16,7 @@ gem 'dmm-crawler'
 
 ## Usage
 
-From the bot in invited Slack's room.
+### DMM.R18 Doujin Ranking
 
 ```ruby
 require 'dmm-crawler'
@@ -44,9 +44,32 @@ client.rankings(term: '24', submedia: 'cg')
 
 For example, Above command will show the doujin cg 24's ranking.
 
-### Available arguments
+#### Available arguments
+
 - Arguments for the term is able to use `all, comic, cg, game, voice`.
 - Arguments for the submedia is able to use `24, weekly, monthly, total`.
+
+### From an art's URL
+
+```
+require 'dmm-crawler'
+
+include DMMCrawler
+
+client = Client.new do |agent|
+  agent.ignore_bad_chunking = false
+end
+
+URL = 'https://www.dmm.co.jp/dc/doujin/-/detail/=/cid=d_087090'
+
+client.get_attributes(URL)
+# =>
+# [
+# ...
+# ]
+```
+
+It returns art information by Array.
 
 ## Contributing
 
