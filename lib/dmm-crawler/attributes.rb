@@ -61,9 +61,11 @@ module DMMCrawler
     end
 
     def price
-      @page
-        .search('.m-priceList .priceList__sub.priceList__sub--big')
-        .text.strip.delete('円,')
+      Integer(
+        @page
+          .search('.m-priceList .priceList__sub.priceList__sub--big')
+          .text.strip.delete('円,')
+      )
     end
 
     def author
