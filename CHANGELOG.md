@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.2.7
+- Make price integer.
+
 ## 0.2.6
 - Fetch the price of the art.
 
