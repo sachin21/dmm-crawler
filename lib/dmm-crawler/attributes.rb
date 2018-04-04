@@ -61,11 +61,13 @@ module DMMCrawler
     end
 
     def price
-      Integer(
-        @page
-          .search('.m-priceList .priceList__sub.priceList__sub--big')
-          .text.strip.delete('円,')
-      )
+      price = @page.search('.priceList__main').text.strip.delete('円,')
+
+      if price.empty?
+        Integer(@page.search('.priceList__main').text.strip.delete('円,'))
+      else
+        Integer(price)
+      end
     end
 
     def author
