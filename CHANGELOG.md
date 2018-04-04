@@ -1,5 +1,10 @@
 # Change logs
 
+## 0.3.0
+### Critical Bug Fix
+- Fix a bug where sub price is not found
+  - If sub price is not found, Integer can't parse argument because it's String.
+
 ## 0.2.7
 - Make price integer.
 
