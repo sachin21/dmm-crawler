@@ -1,6 +1,9 @@
 # Change logs
 
 ## 0.3.1
+- Revert "Use HTTPS in all connections".
+
+## 0.3.1
 - Use HTTPS in all connections.
 
 ## 0.3.0
