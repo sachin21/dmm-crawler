@@ -1,6 +1,9 @@
 # Change logs
 
-## 0.3.1
+## 0.3.3
+- Fetch first img element from art page.
+
+## 0.3.2
 - Revert "Use HTTPS in all connections".
 
 ## 0.3.1
