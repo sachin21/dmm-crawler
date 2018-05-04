@@ -4,6 +4,7 @@ rvm:
   - ruby-2.2.9
   - ruby-2.3.7
   - ruby-2.4.4
+  - ruby-2.5.1
 
 before_install:
   - gem install bundler
