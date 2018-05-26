@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'rdmm'
   spec.add_runtime_dependency 'mechanize'
 
   spec.add_development_dependency 'bundler'
