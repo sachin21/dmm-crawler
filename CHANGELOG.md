@@ -1,5 +1,9 @@
 # Change logs
 
+## 0.3.4
+- Support Ruby `2.5.1`.
+- Implement the function to detect excluded arts for affiliating.
+
 ## 0.3.3
 - Fetch first img element from art page.
 
