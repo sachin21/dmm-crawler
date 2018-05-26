@@ -15,5 +15,9 @@ module DMMCrawler
     def get_attributes(url)
       Attributes.new(url, agent: @agent).to_a
     end
+
+    def affiliateable?(url)
+      Attributes.new(url, agent: @agent).affiliateable?
+    end
   end
 end
