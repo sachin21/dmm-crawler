@@ -1,3 +1,4 @@
+require 'rdmm'
 require 'mechanize'
 
 module DMMCrawler

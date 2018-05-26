@@ -1,7 +1,10 @@
 module DMMCrawler
   class Attributes
+    HTTP_STATUS_CODE_OF_SUCCESS = 200
+
     def initialize(url, agent: Agent.instance.agent)
       @page = agent.get(url)
+      @r_client = Rdmm::Client.new(affiliate_id: ENV['DMM_AFFILIATE_ID'], api_id: ENV['DMM_API_ID'])
     end
 
     def to_a
@@ -13,8 +16,13 @@ module DMMCrawler
         author,
         informations,
         price,
+        affiliateable?,
         tags
       ]
+    end
+
+    def affiliateable?
+      @r_client.list_items(site: 'DMM.R18', keyword: title).body['result']['status'] == HTTP_STATUS_CODE_OF_SUCCESS
     end
 
     private

@@ -15,7 +15,7 @@ module DMMCrawler
         end
       end
 
-      arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, informations, price, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, informations, price, affiliateable, tags), rank|
         {
           title: title,
           title_link: title_link,
@@ -25,6 +25,7 @@ module DMMCrawler
           informations: informations,
           rank: rank,
           price: price,
+          affiliateable: affiliateable,
           tags: tags
         }
       end
