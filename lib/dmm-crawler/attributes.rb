@@ -15,7 +15,6 @@ module DMMCrawler
         submedia,
         author,
         informations,
-        price,
         affiliateable?,
         tags
       ]
@@ -62,16 +61,6 @@ module DMMCrawler
         .value
         .gsub('c_icon_productGenre ', '')
         .delete('-')
-    end
-
-    def price
-      price = @page.search('.priceList__main').text.strip.delete('円,')
-
-      if price.empty?
-        Integer(@page.search('.priceList__main').text.strip.delete('円,'))
-      else
-        Integer(price)
-      end
     end
 
     def author
