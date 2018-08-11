@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.3.5
+- Drop support of fetching art's price.
+
 ## 0.3.4
 - Support Ruby `2.5.1`.
 - Implement the function to detect excluded arts for affiliating.
