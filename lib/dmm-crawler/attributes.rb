@@ -14,7 +14,6 @@ module DMMCrawler
         image_url,
         submedia,
         author,
-        informations,
         affiliateable?,
         tags
       ]
@@ -65,21 +64,6 @@ module DMMCrawler
 
     def author
       @page.search('div.circleName__item').text.strip
-    end
-
-    def informations
-      keys = extract_text(@page.search('.m-productInformation .productInformation__item .informationList__ttl'))
-      values = extract_text(@page.search('.m-productInformation .productInformation__item .informationList__txt'))
-
-      information = keys.zip(values)
-      series = information.find { |array| array.first == 'シリーズ' }
-
-      if series
-        information = information.reject { |array| array.first == 'シリーズ' }
-        information.push(series)
-      end
-
-      information.map { |key, value| { key: key, value: value } }
     end
 
     def tags
