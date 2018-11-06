@@ -5,7 +5,8 @@
 ## :warning: Cation :warning:
 
 FANZA does not accepted crawling pages so I recommend to not use this gem.
-If you using dmm-crawler and your account banned, I do not take any responsibility or liability for any damage or loss caused by mine gem.
+
+I do not take any responsibility or liability for any damage or loss caused by mine gem.
 
 ## What is DMM Crawler
 
