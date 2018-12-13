@@ -19,7 +19,7 @@ describe DMMCrawler::Ranking do
       let(:attachments) { described_class.new(arguments).arts }
       let(:term) { '24' }
 
-      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :rank, :affiliateable, :tags)) }
+      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :informations, :rank, :affiliateable, :tags)) }
       it { is_expected.to all(satisfy { |art| art.all? { |_k, v| v != '' } }) }
     end
 

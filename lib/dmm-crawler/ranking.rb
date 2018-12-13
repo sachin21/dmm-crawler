@@ -15,13 +15,14 @@ module DMMCrawler
         end
       end
 
-      arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, affiliateable, tags), rank|
+      arts.map.with_index(1) do |(title, title_link, image_url, submedia, author, informations, affiliateable, tags), rank|
         {
           title: title,
           title_link: title_link,
           image_url: image_url,
           submedia: submedia,
           author: author,
+          informations: informations,
           rank: rank,
           affiliateable: affiliateable,
           tags: tags
