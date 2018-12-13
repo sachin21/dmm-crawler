@@ -39,6 +39,7 @@ client.rankings(term: '24', submedia: 'cg')
 #   title_link: "タイトルURL",
 #   image_url: "画像URL",
 #   submedia: "cg",
+#   informations: [{key: 'key', value: 'value'}],
 #   tags: ["タグ1", "タグ2"]
 # }
 ```

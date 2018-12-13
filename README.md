@@ -41,6 +41,7 @@ client.rankings(term: '24', submedia: 'cg')
 #   image_url: "Link to title"s main image",
 #   submedia: "cg",
 #   author: "author",
+#   informations: [{key: 'key', value: 'value'}],
 #   rank: '1'
 #   tags: ["tag1", "tag2"]
 # }
