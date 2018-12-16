@@ -4,7 +4,7 @@ module DMMCrawler
       include Attributes
 
       FETCHING_LIMITATION = 20
-      DLSOFT_URL = "http://dlsoft.dmm.co.jp/"
+      DLSOFT_URL = "https://dlsoft.dmm.co.jp/"
 
       def initialize(agent: Agent.instance.agent, term: nil)
         @agent = discriminate_agent(agent)
@@ -43,7 +43,7 @@ module DMMCrawler
         when 'weekly'
           'term=weekly'
         when 'monthly'
-          nil
+          ''
         when 'yearly'
           "term=first/year=#{Time.now.year}/"
         end
