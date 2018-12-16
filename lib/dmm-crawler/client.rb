@@ -9,15 +9,19 @@ module DMMCrawler
     end
 
     def rankings(arguments)
-      Ranking.new(arguments.merge!(agent: @agent)).arts
+      Ranking::DojinRanking.new(arguments.merge!(agent: @agent)).arts
+    end
+
+    def adult_game_rankings(arguments)
+      Ranking::AdultGameRanking.new(arguments.merge!(agent: @agent)).arts
     end
 
     def get_attributes(url)
-      Attributes.new(url, agent: @agent).to_a
+      Attributes::DojinAttributes.new(url, agent: @agent).to_a
     end
 
     def affiliateable?(url)
-      Attributes.new(url, agent: @agent).affiliateable?
+      Attributes::DojinAttributes.new(url, agent: @agent).affiliateable?
     end
   end
 end
