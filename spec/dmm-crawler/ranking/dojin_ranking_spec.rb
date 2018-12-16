@@ -1,4 +1,4 @@
-describe DMMCrawler::Ranking do
+describe DMMCrawler::Ranking::DojinRanking do
   let(:agent) { DMMCrawler::Agent.instance.agent }
   let(:submedia) { 'cg' }
   let(:arguments) { { submedia: submedia, term: term, agent: agent } }
@@ -19,13 +19,14 @@ describe DMMCrawler::Ranking do
       let(:attachments) { described_class.new(arguments).arts }
       let(:term) { '24' }
 
-      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :informations, :rank, :affiliateable, :tags)) }
+      it { is_expected.to all(include(:title, :title_link, :image_url, :submedia, :author, :rank, :affiliateable, :tags)) }
       it { is_expected.to all(satisfy { |art| art.all? { |_k, v| v != '' } }) }
     end
 
     context 'with not registered argument' do
       let(:attachments) { -> { described_class.new(arguments).arts } }
-      let(:term) { nil }
+      let(:term) { '24' }
+      let(:agent) { nil }
 
       it { is_expected.to raise_error(TypeError) }
     end

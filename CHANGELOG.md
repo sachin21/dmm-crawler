@@ -1,5 +1,9 @@
 # Change logs
 
+## 0.4.0
+- Drop support of fetching the art's information.
+- Support adult game's rankings.
+
 ## 0.3.5
 - Drop support of fetching art's price.
 
