@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.4.1
+- Fix a bug where nil is not accepted in `File.join`.
+
 ## 0.4.0
 - Drop support of fetching the art's information.
 - Support adult game's rankings.
