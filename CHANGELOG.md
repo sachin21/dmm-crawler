@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.4.2
+- Fix a bug where adult game's tags wrong to be fetched.
+
 ## 0.4.1
 - Fix a bug where nil is not accepted in `File.join`.
 
