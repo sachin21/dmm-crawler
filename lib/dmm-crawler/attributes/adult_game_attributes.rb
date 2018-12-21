@@ -41,15 +41,11 @@ module DMMCrawler
       end
 
       def tags
-        item['iteminfo']['genre'].map { |h| h['name'] }
+        @page.search('.area-bskt  tbody  tr')[4].search('td a').map { |elm| elm.text.strip }
       end
 
       def content_id
         @page.uri.to_s.match(/views_\d*/)
-      end
-
-      def item
-        @item ||= @r_client.list_items(site: 'DMM.R18', content_id: content_id).body['result']['items'][0]
       end
     end
   end
