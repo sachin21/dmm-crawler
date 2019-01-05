@@ -45,7 +45,7 @@ module DMMCrawler
         when 'monthly'
           ''
         when 'yearly'
-          "term=first/year=#{Time.now.year}/"
+          "term=all/year=2018"
         end
       end
     end
