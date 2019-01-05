@@ -1,5 +1,8 @@
 # Change logs
 
+## 0.4.3
+- Fix a bug where 2019's eroge ranking is not found on FANZA.
+
 ## 0.4.2
 - Fix a bug where adult game's tags wrong to be fetched.
 
