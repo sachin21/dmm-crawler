@@ -2,7 +2,7 @@ describe DMMCrawler::Ranking::AdultGameRanking do
   let(:agent) { DMMCrawler::Agent.instance.agent }
   let(:arguments) { { agent: agent, term: term } }
 
-  describe '#arts' do
+  skip 'The eroge genre does not allow access from except Japan' do
     subject { attachments }
 
     after { sleep 2 }
