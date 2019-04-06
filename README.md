@@ -4,7 +4,7 @@
 
 ## :warning: Cation :warning:
 
-FANZA does not accepted crawling pages so I recommend to not use this gem.
+FANZA does not accept crawling pages so I don't recommend to use this gem.
 
 I do not take any responsibility or liability for any damage or loss caused by mine gem.
 
