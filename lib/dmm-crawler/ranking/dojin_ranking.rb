@@ -8,7 +8,7 @@ module DMMCrawler
       def initialize(agent:, submedia: nil, term: nil)
         @agent = discriminate_agent(agent)
         @submedia = submedia
-        @term = submedia
+        @term = term
         @url = File.join(BASE_URL, "/dc/doujin/-/ranking-all/=/sort=popular/submedia=#{@submedia}/term=#{@term}")
       end
 
