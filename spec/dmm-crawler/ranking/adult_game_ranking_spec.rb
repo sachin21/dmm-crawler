@@ -19,7 +19,7 @@ describe DMMCrawler::Ranking::AdultGameRanking do
       let(:attachments) { described_class.new(arguments).arts }
 
       it { is_expected.to all(include(:title, :title_link, :main_image_url, :sample_image_urls, :submedia, :author, :rank, :affiliateable, :tags)) }
-      it { is_expected.to all(satisfy { |art| art.all? { |_k, v| v != '' && v != nil} }) }
+      it { is_expected.to all(satisfy { |art| art.all? { |_k, v| v != '' && !v.nil? } }) }
     end
 
     context 'with not registered argument' do
