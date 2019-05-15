@@ -7,7 +7,9 @@ rvm:
 before_install:
   - gem install bundler
 
-script: 'bundle exec rake spec'
+script:
+  - bundle exec rubocop -c .rubocop.yml
+  - bundle exec rake spec
 
 notifications:
   email: false
