@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DMMCrawler
   class Client
     attr_accessor :agent

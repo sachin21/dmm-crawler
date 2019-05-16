@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe DMMCrawler::Ranking::AdultGameRanking do
   let(:agent) { DMMCrawler::Agent.instance.agent }
   let(:arguments) { { agent: agent, term: term } }

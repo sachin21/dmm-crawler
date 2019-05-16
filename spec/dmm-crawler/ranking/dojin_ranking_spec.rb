@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe DMMCrawler::Ranking::DojinRanking do
   let(:agent) { DMMCrawler::Agent.instance.agent }
   let(:submedia) { 'cg' }

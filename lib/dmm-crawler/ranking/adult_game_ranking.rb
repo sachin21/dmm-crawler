@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DMMCrawler
   module Ranking
     class AdultGameRanking < BaseRanking
