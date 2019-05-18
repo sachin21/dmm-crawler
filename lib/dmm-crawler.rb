@@ -4,7 +4,7 @@ require 'rdmm'
 require 'mechanize'
 
 module DMMCrawler
-  BASE_URL = 'http://www.dmm.co.jp'.freeze
+  BASE_URL = 'http://www.dmm.co.jp'
 end
 
 require 'dmm-crawler/agent'

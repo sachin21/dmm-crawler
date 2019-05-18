@@ -6,7 +6,7 @@ module DMMCrawler
       include Attributes
 
       FETCHING_LIMITATION = 20
-      DLSOFT_URL = 'https://dlsoft.dmm.co.jp/'.freeze
+      DLSOFT_URL = 'https://dlsoft.dmm.co.jp/'
 
       def initialize(agent: Agent.instance.agent, term: nil)
         @agent = discriminate_agent(agent)

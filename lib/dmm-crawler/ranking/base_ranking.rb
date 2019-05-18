@@ -20,6 +20,7 @@ module DMMCrawler
 
       def discriminate_agent(agent)
         return agent if agent.is_a?(Mechanize)
+
         raise TypeError
       end
     end
