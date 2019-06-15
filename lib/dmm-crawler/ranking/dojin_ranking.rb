@@ -8,7 +8,7 @@ module DMMCrawler
       FETCHING_LIMITATION = 10
 
       def initialize(agent:, submedia: nil, term: nil)
-        @agent = discriminate_agent(agent)
+        @agent = check_agent(agent)
         @submedia = submedia
         @term = term
         @url = File.join(BASE_URL, "/dc/doujin/-/ranking-all/=/sort=popular/submedia=#{@submedia}/term=#{@term}")

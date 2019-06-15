@@ -18,7 +18,7 @@ module DMMCrawler
         yield
       end
 
-      def discriminate_agent(agent)
+      def check_agent(agent)
         return agent if agent.is_a?(Mechanize)
 
         raise TypeError

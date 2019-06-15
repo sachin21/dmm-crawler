@@ -9,7 +9,7 @@ module DMMCrawler
       DLSOFT_URL = 'https://dlsoft.dmm.co.jp/'
 
       def initialize(agent: Agent.instance.agent, term: nil)
-        @agent = discriminate_agent(agent)
+        @agent = check_agent(agent)
         @term = term
         @url = URI.join(DLSOFT_URL, File.join('ranking', parameterized_term))
       end
