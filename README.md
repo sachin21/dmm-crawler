@@ -51,8 +51,8 @@ For example, Above command will show the doujin cg 24's ranking.
 
 #### Available arguments
 
-- Arguments for the term is able to use `all, comic, cg, game, voice`.
-- Arguments for the submedia is able to use `24, weekly, monthly, total`.
+- Arguments for the term is available to use `all, comic, cg, game, voice`.
+- Arguments for the submedia is available to use `24, weekly, monthly, total`.
 
 ### From an art's URL
 
