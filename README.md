@@ -56,7 +56,7 @@ For example, Above command will show the doujin cg 24's ranking.
 
 ### From an art's URL
 
-```
+```ruby
 require 'dmm-crawler'
 
 include DMMCrawler
